@@ -44,37 +44,42 @@ SUPABASE_DB=postgres
 SUPABASE_USER=...
 SUPABASE_PASSWORD=...
 DISCORD_WEBHOOK_URL=...   # optional
-```md
 
 
+```
 
-2) Start the Stack
+### 2) Start the Stack
 From the project root:
 ```bash
 docker compose up --build
-```md
+```
 
 
 
 This starts Airflow, installs dependencies, and prepares the local environment.
-3) Run dbt Models
+
+### 3) Run dbt Models
 From the dbt project directory:
 cd dbt/data_finance_pipeline
 dbt run
 dbt test
 This builds the staging and marts models and validates data quality with tests.
-4) Run the Streamlit Dashboard
+
+### 4) Run the Streamlit Dashboard
 From the project root:
 streamlit run app/app.py
 The dashboard will be available locally and display the full historical dataset.
-##Screenshots
+
+## Screenshots
 Streamlit Dashboard
 Airflow DAG
-##Notes
+
+## Notes
 The pipeline currently runs locally but is designed with production-like patterns (idempotent ingestion, dimensional modeling, orchestration, logging).
 Calendar and fact models are derived directly from real trading data to avoid data loss during joins.
 The project focuses on clarity, robustness, and reproducibility rather than over-engineering.
-##Future Improvements
+
+## Future Improvements
 Public deployment of the Streamlit dashboard
 CI checks for dbt models
 Cloud-based Airflow execution
