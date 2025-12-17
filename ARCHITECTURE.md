@@ -36,6 +36,7 @@ A daily DAG runs the pipeline:
 4. Log status to `etl_run_log`
 5. Send failure alerts (Discord webhook)
 
+
 ### 5) Serving (Streamlit)
 The Streamlit app reads modeled data from Supabase and provides:
 - Asset and date range filters
