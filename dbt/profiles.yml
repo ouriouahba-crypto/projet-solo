@@ -1,0 +1,15 @@
+data_finance_pipeline:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "aws-1-eu-central-1.pooler.supabase.com"        # ex: jixryuryeudzjdofqasf.supabase.co
+      port: 6543
+      user: "postgres.jixryuryeudzjdofqasf"
+      password: "camfuk-5decso-ruRrem"  # le mot de passe de ta DB Supabase
+      dbname: "postgres"
+      schema: "public"
+      threads: 4
+      sslmode: "require"
+      connect_timeout: 30
+    

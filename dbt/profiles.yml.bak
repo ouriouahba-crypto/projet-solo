@@ -1,0 +1,16 @@
+data_finance_pipeline:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "db.jixryuryeudzjdofqasf.supabase.co"        # ex: jixryuryeudzjdofqasf.supabase.co
+      port: 5432
+      hostaddr: "104.18.38.10"
+      user: "postgres"
+      password: "camfuk-5decso-ruRrem"  # le mot de passe de ta DB Supabase
+      dbname: "postgres"
+      schema: "public"
+      threads: 4
+      sslmode: "require"
+      connect_timeout: 30
+    

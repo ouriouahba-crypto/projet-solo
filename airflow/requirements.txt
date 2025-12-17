@@ -1,0 +1,6 @@
+pandas
+yfinance
+httpx
+python-dotenv
+dbt-core
+dbt-postgres
