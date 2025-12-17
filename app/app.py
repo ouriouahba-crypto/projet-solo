@@ -100,15 +100,28 @@ st.markdown(
 )
 
 # ---------- Environment / DB ----------
+# Local: uses .env | Streamlit Cloud: uses Secrets
 load_dotenv()
-db_url = os.getenv("SUPABASE_DB_URL")
+
+def get_db_url() -> str:
+    # Streamlit Cloud -> Secrets
+    if "SUPABASE_DB_URL" in st.secrets:
+        return st.secrets["SUPABASE_DB_URL"]
+    # Local dev -> .env
+    return os.getenv("SUPABASE_DB_URL", "")
+
+db_url = get_db_url()
 
 if not db_url:
-    st.error("SUPABASE_DB_URL is not set in your .env file.")
+    st.error("SUPABASE_DB_URL is missing. Set it in Streamlit Secrets (preferred) or in your local .env.")
     st.stop()
 
-engine = create_engine(db_url)
-
+# Force SSL for Supabase + avoid stale connections
+engine = create_engine(
+    db_url,
+    connect_args={"sslmode": "require", "connect_timeout": 10},
+    pool_pre_ping=True,
+)
 
 @st.cache_data(show_spinner="Loading data from Supabase…")
 def load_data() -> pd.DataFrame:
