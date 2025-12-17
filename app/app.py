@@ -6,10 +6,6 @@ from dotenv import load_dotenv
 import os
 from datetime import datetime
 
-st.sidebar.markdown(
-    f"**Last updated:** {datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')}"
-)
-
 # ---------- Page config ----------
 st.set_page_config(
     page_title="Data Finance Pipeline",
@@ -346,6 +342,10 @@ st.markdown(
     </div>
     """,
     unsafe_allow_html=True,
+)
+
+st.sidebar.markdown(
+    f"**Last updated:** {datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')}"
 )
 
 st.sidebar.markdown("## About")
