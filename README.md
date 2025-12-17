@@ -1,5 +1,5 @@
 # Data Finance Pipeline (Mini-Bloomberg)
-
+Live Demo: https://projet-solo-46o4p4svdfxef5rdevb284.streamlit.app
 This project is an end-to-end data engineering pipeline built as a personal portfolio project, inspired by real-world financial data platforms.
 
 It ingests daily market prices, stores them in Supabase Postgres, transforms them using dbt, orchestrates workflows with Airflow, and exposes analytics through a Streamlit dashboard.
@@ -89,7 +89,7 @@ The pipeline currently runs locally but is designed with production-like pattern
 Calendar and fact models are derived directly from real trading data to avoid data loss during joins.
 The project focuses on clarity, robustness, and reproducibility rather than over-engineering.
 
-## Future Improvements
-Public deployment of the Streamlit dashboard
-CI checks for dbt models
-Cloud-based Airflow execution
+## Disclaimer
+This project is for educational and portfolio purposes only.
+Data is sourced from public APIs (Yahoo Finance) and may contain inaccuracies.
+This is not financial advice.

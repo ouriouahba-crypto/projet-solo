@@ -4,6 +4,11 @@ import altair as alt
 from sqlalchemy import create_engine
 from dotenv import load_dotenv
 import os
+from datetime import datetime
+
+st.sidebar.markdown(
+    f"**Last updated:** {datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')}"
+)
 
 # ---------- Page config ----------
 st.set_page_config(
@@ -342,3 +347,18 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
+st.sidebar.markdown("## About")
+st.sidebar.markdown("""
+**Data Finance Pipeline**
+
+Educational end-to-end data engineering project:
+- Data ingestion (Python)
+- Storage (PostgreSQL)
+- Transformation (dbt)
+- Visualization (Streamlit)
+
+**Data source:** Yahoo Finance  
+**Update frequency:** Daily  
+**Purpose:** Portfolio & learning project
+""")
