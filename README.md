@@ -60,19 +60,27 @@ This starts Airflow, installs dependencies, and prepares the local environment.
 
 ### 3) Run dbt Models
 From the dbt project directory:
+```bash
 cd dbt/data_finance_pipeline
 dbt run
 dbt test
+```
 This builds the staging and marts models and validates data quality with tests.
+
 
 ### 4) Run the Streamlit Dashboard
 From the project root:
+```bash
 streamlit run app/app.py
+```
 The dashboard will be available locally and display the full historical dataset.
 
 ## Screenshots
-Streamlit Dashboard
-Airflow DAG
+
+aiflow.png
+
+dashboard.png
+
 
 ## Notes
 The pipeline currently runs locally but is designed with production-like patterns (idempotent ingestion, dimensional modeling, orchestration, logging).
