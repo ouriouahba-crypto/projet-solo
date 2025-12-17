@@ -77,9 +77,11 @@ The dashboard will be available locally and display the full historical dataset.
 
 ## Screenshots
 
-aiflow.png
+### Streamlit Dashboard
+![Dashboard](docs/dashboard.png)
 
-dashboard.png
+### Airflow DAG
+![Airflow](docs/airflow.png)
 
 
 ## Notes
